@@ -3,232 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-
-
-<style>
-    
-/* RESET CSS*/
-html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,time, mark, audio, video {
-	margin: 0;	padding: 0;	border: 0;	font-size: 100%; font: inherit;	vertical-align: baseline;text-decoration:none;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-article::after{
-    display: block;
-    content: '';
-    clear: both;
-    height: 0;
-    visibility: hidden;
-}
-section::after{
-    display: block;
-    content: '';
-    clear: both;
-    height: 0;
-    visibility: hidden;
-}
-/* RESET CSS*/
-/*
--webkit-크롬,사파리
--moz-파이어폭스
--ms-익스플로어
--o-오페라
-*/    
-    html,body{
-        width: 100%;height: 100%;
-    }
-    .scroll-box{
-        width: 100%;height: 100%;
-        overflow-y: hidden;
-        background-color: crimson;
-    }
-    
-    section.main{
-        width: 100%;height: 100%;
-    }
-    article.main-container{
-        width: 70%;height: 100%;
-        position: relative;
-        vertical-align:middle;
-        background-color: royalblue;
-    }
-     article.main-container > .main-back{            
-        width: 95%;
-        height: 100%;
-        position: relative;
-        float: left;
-        display: inline-block;
-        vertical-align: middle; 
-        transform: translate(0,0);
-        background: rgba(0, 0, 0, 0.8);
-        -webkit-transform: translate(0,0);/**/
-        -webkit-backface-visibility: hidden;
-        -webkit-transition-property: color;
-        -webkit-transition-duration: 0.3s;
-         text-align: center;
-        
-    }
-    
-      article.main-container > .menu{
-        background-color: aqua;
-        width:5%;
-        display: inline-block;
-          
-    }
-     article.main-container > .main-back:after{        
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: 0; left: 0;
-        right: 0; bottom: 0;/*중앙을 기준으로*/
-        background-color: black;
-        transform: scale(0.75);/*호버효과전 사이즈*/
-        transition: transform 1s ease-out ;
-        -webkit-transform: scale(0.75);
-        -webkit-transition-duration: 0.5s;
-        -webkit-transition-timing-function: ease-out;       
-    }
-     article.main-container > .main-back:hover:after{
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
-    article.main-container > .main-back >.main-imgbox{            
-        min-width: 300px;
-        max-width: 500px;
-        min-height: 80px;
-        max-height: 500px;
-        height:50%;
-        width:50%;
-        position:absolute;
-        top:50%;
-        left:50%;
-        background:#f00;
-        transform:translate(-50%, -50%);/*이미지 위치조정정가운데*/
-        background-color:aqua;
-   
-    }
-
-    
-    article.main-container > .main-back >.main-imgbox:before{
-        position: absolute;
-        z-index: -1;
-        top: 0; left: 0;
-        right: 0; bottom: 0;/*중앙을 기준으로*/
-        background-color:aqua;
-       
-    }
-    article.profile{
-        width: 30%;height:100%;
-        background-color:brown;
-        position:absolute;
-        top:0;left:70%;
-        overflow-y:auto;
-    }
-    .bar{}    
-    
-</style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   <div class="scroll-box">
-    <section class="main">
-        <article class="main-container">
-             <div class="main-back">
-                  <div class="main-imgbox">
-                  </div>
-              </div>
-              <div class="menu">
-                  <div>메뉴1</div>
-                  <div>메뉴2</div>
-                  <div>메뉴3</div>
-              </div>
+
+<div class="scroll_box">
+    <section id="main">
+        <article id="main_container">
+          <div id="main_content_back">
+           <!--메인 메뉴에 반응하는 컨텐츠 영역 start-->
+            <div id="main_index" class="contents -main_index">
+               <div>
+                <h1>Code Communicater</h1>
+                <p>#소개#소개#소개#소개</p>
+               </div>
+            </div>
+            <div id="main_work" class="contents -main_work">
+               <div>
+                <h1>Work</h1>
+                <p>#소개소개소개소개</p>
+               </div>
+            </div>
+            <div id="main_contact" class="contents -main_contact">
+               <div>
+                <h1>Contact Me</h1>
+                <p>#소개소개소개소개</p>
+               </div>
+            </div>
+           </div>
+           <!--메인 메뉴에 반응하는 컨텐츠 영역 end-->
+           <!--메뉴 fixed -->
+            <nav id="main_menu">
+                <ul>
+                    <li><a href="#" class="bt" data-info="-main_index">Profile</a></li>
+                    <li><a href="#" class="bt" data-info="-main_work">Work</a></li>
+                    <li><a href="#" class="bt" data-info="-main_contact">Contact me</a></li>
+                </ul>
+            </nav>
+           <!--메뉴 fixed end-->
         </article>
-        <article class="profile">
-                 <h1> 프로필영역입니다</h1>
-                 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-
-        </article>  
+        <!--프로필영역-->
+        <article id="profile">       
+            <h3>#김다솜(Kim-da-som)</h3>
+            <ul>
+               <li>
+                    <h2>Profile</h2>
+                    <p>1995.08.25</p>
+                    <p>계원 예술대학교 디지털미디어 디자인과</p>
+                    <p>사람 사이에서 문제가 생겼을 때 커뮤니케이터는 서로의 의견 전달을 통해 상대를 이해하게 만들고 타협점을 찾는데 가장 좋은 역할을 합니다. 때문에 다양한 상황을 고려한 코드를 짜는 프론트 엔드 개발자는 커뮤니케이터와 아주 닮아있다고 생각하는데 디자인과에서 웹 디자인 공부를 한 경험과 코드의 응용을 좋아하여 다양한 시도를 하는것에 많은 시간을 쏟았던 경험을 밑거름으로 좋은 코드 커뮤니케이터를 목표로 노력하는 김다솜 입니다 #코드커뮤니케이터 #정보공유 #디자인과프로그래머</p>
+                </li>
+                <li><h2>Skils</h2></li>
+                <li id="html" class="skilbar">Html/Css<span>80%</span></li>
+                <li id="js" class="skilbar">Jquery<span>50%</span></li>
+            </ul>
+        </article>
+        <!--프로필 영역 end-->       
     </section>
-    <section>
-           <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-           <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-           <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-           <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-
+    
+    <!--work시작 기본:display none;-->
+    <section id="work">
+        <article>
+            <h1>work</h1>
+            <div id="search">
+            Project name : 
+            <input type='text' id='txtFilter' onkeyup='{filter();return false}'>
+            </div>
+            <!--텍스트입력시 필터 펑션 실행 -->
+            <!--work버튼-->
+            <ul id="work_button">
+                <li><a class="f_button" data-info="-html_css" href="#">html/css</a></li>
+                <li><a class="f_button" data-info="-javascript_jquery" href="#">javascript/jquery</a></li>
+                <li><a class="f_button" data-info="-source_gallery" href="#">source gallery</a></li>
+            </ul>
+            <!--work리스트-->
+            <ul id="work_list">
+                <li class="-html_css">
+                    <a href="#">
+                        <div class="work_list_hover">
+                            <p>#해쉬태그 ,#해쉬태그2 ,#해쉬태그3</p>
+                        </div>
+                        <img src="#">
+                        <p>지브리</p>
+                    </a>
+                </li>
+                <li class="-javascript_jquery">
+                    <a href="#">
+                        <div class="work_list_hover">
+                            <p>#해쉬태그 ,#해쉬태그2 ,#해쉬태그3</p>
+                        </div>
+                        <img src="#">
+                        <p>지브리</p>
+                    </a>
+                </li>
+                <li class="-javascript_jquery">
+                    <a href="#">
+                        <div class="work_list_hover">
+                            <p>#해쉬태그 ,#해쉬태그2 ,#해쉬태그3</p>
+                        </div>
+                        <img src="#">
+                        <p>지브리</p>
+                    </a>
+                </li>
+                <li class="-html_css">
+                    <a href="#">
+                        <div class="work_list_hover">
+                            <p>#해쉬태그 ,#해쉬태그2 ,#해쉬태그3</p>
+                        </div>
+                        <img src="#">
+                        <p>지브리</p>
+                    </a>
+                </li>
+                <li class="-source_gallery">
+                    <a href="#">
+                        <div class="work_list_hover">
+                            <p>#해쉬태그 ,#해쉬태그2 ,#해쉬태그3</p>
+                        </div>
+                        <img src="#">
+                        <p>지브리</p>
+                    </a>
+                </li>
+                <li class="-source_gallery">
+                    <a href="#">
+                        <div class="work_list_hover">
+                            <p>#해쉬태그12 ,#해쉬태그2 ,#해쉬태그3</p>
+                        </div>
+                        <img src="#">
+                        <p>얍지브리</p>
+                    </a>
+                </li>
+                <li class="-source_gallery">
+                    <a href="#">
+                        <div class="work_list_hover">
+                            <p>#해쉬태그22 ,#해쉬태그2 ,#해쉬태그3</p>
+                        </div>
+                        <img src="#">
+                        <p>엥지브리</p>
+                    </a>
+                </li>
+                <li class="-html_css">
+                    <a href="#">
+                        <div class="work_list_hover">
+                            <p>#해쉬태그 ,#해쉬태그2 ,#해쉬태그3</p>
+                        </div>
+                        <img src="#">
+                        <p>아지브리</p>
+                    </a>
+                </li>
+                <li class="-html_css">
+                    <a href="#">
+                        <div class="work_list_hover">
+                            <p>#해쉬태그 ,#해쉬태그2 ,#해쉬태그3</p>
+                        </div>
+                        <img src="#"/>
+                        <p>응지브리</p>
+                    </a>
+                </li> 
+            </ul>
+            <!--work 리스트 end-->
+        </article>
     </section>
-    </div>
-<script src="http://code.jquery.com/jquery-latest.js"></script>   
+    
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>   
 <script>
-//$(document).read(function(){    
- /*
- $('.main-container').on('scroll touchmove mousewheel', function(e) {
-           e.preventDefault();//현재이벤트의 기본동작을 중단한다
-           e.stopPropagation();//현재이벤트가 상위로전파되지 않도록 중단한다 
-           return false; //제이쿼리를 사용할땐 위에두개를 실행하고 사용하지않을때는e.preventDefault();와같다
-        });//새로고침/처음 스크롤 방지
-    */
-    
- $(".main-container").click(function () {
-    
-
-    if($(".main-container").hasClass('bar')){//해당 클래스의 유무 확인
-        
-    //참인경우
-        
-        $(".scroll-box").css({overflowY:'hidden'});
-        $(".main-container").removeClass('bar'); //.main에서 bar 클래스를 지움
-        $(".main-container").animate({width:'70%'});
-        $(".profile").animate({left:'70%'});
-        $(".scroll-box").animate({scrollTop : '0'});
-        
-        //프로필화면 나타남        
-        
-       /* $('.main-container').on('scroll touchmove mousewheel', function(e) {
-            e.preventDefault();
-            e.stopPropagation(); 
-            return false;});
-        //스크롤 방지
-       */ 
-     //거짓인경우   
+ $( document ).ready( function() { 
+    var $container = $("#main_container");
+    var $profile = $("#profile")
+    var $scroll = $(".scroll_box");
+ $("#main_content_back").click(function() {     
+  //메인 화면크기조절 동작
+     
+    if($container.hasClass('bar')){//해당 클래스의 유무 확인   
+    //true    
+        $scroll.css({overflowY:'hidden'}).animate({scrollTop: '0'},400,"linear");//본문스크롤방지스크롤0으로이동
+        $container.removeClass('bar').animate({width:'70%'});
+        $profile.animate({left:'70%'});//프로필화면 나타남  
+     //false   
     }else{
-        $(".main-container").addClass('bar');//bar클래스를 추가
-        $(".main-container").animate({width:'100%',duration:'3s'});//화면사이즈100%
-        $(".profile").animate({left:'100%'});
-        //프로필화면 오른쪽화면으로 사라짐
-        $(".scroll-box").css({overflowX:'hidden',overflowY:'auto'});
-        $("html, body").css({overflowX:'hidden'});
+            $container.addClass('bar').animate({width:'100%',duration:'3s'});//화면사이즈100%
+            $profile.animate({left:'100%'});//프로필화면 오른쪽화면으로 사라짐
+            $scroll.css({overflowY:'auto'});//본문스크롤방지 해제
+            $("#main_menu").css({position:'fixed'});
+            $("html, body").css({overflowX:'hidden'});//가로스크롤방지
+         }
+ });
+     $('#main_menu').click(function(){
+          $scroll.animate({scrollTop: '0'},400,"linear"); 
+     });
+     // 메인화면 호버시 크기변화
+        $container.hover(
+            function () {$('.contents').animate({width:'80%',height:'70%'}, 500 );},
+            function () {$('.contents').animate( {width:'100%',height:'100%'}, 500 );
+        });
+    //메뉴 버튼 클릭시 메인 컨텐츠 내용변환
+    $('.bt').click(function(){
+        $(".contents").fadeOut();
+        back_change($(this).attr('data-info'));
         
-        //$('.main-container').off('scroll touchmove mousewheel');
-        //스크롤방지 해제
+        function back_change(info_var){      
+            $('.' + info_var).fadeIn(); 
         }
+    });            
+
+      //텍스트 필터링 부분  
+
+      function filter() {
+        var $licontains = $("p:contains('" + $('#txtFilter').val() + "')");
+          
+        if ($('#txtFilter').val() == "")
+        //어떤 글도입력되지 않을때
+          $("p").css({
+          display: 'block'
+        });
+        else {
+          //글이 입력되었을때
+          $("p").fadeOut().css({
+            display: 'none'
+          });
+          //입력한 텍스트를 li의 문자열에서 찾음
+          $licontains.fadeIn().animate({
+            display: 'block',
+            marginTop: '0'
+          }, 300);
+        }
+
+        return false;
+      }
+     
+      //버튼 부분
+
+      $('.f_button').click(function() {
+        display_change($(this).attr('data-info'));
+        //(string값반환)
+         
+           console.log($scroll.scrollTop());
       });
-//$(".profile").on(scroll touchmove mousewheel)    
+      
+      function display_change(class_var) {
+        //display_change함수를 선언(매개변수)
+        $("#work_list > li").animate({
+          opacity:'0.2',
+          marginTop:'20px'
+        }).hide(500);
+        
+        $('.' + class_var).show(200).animate({
+            //클래스선택자로 만들어줌
+          opacity:'1',
+          marginTop: '0',
+          //transform: 'scale(0.2, 0.2)'
+        }, 300);
+        
+      }
+   
+});
+</script>   
+    
 
-
-</script>    
+   
+</div>    
 </body>
 </html>

@@ -1,0 +1,194 @@
+    /* RESET CSS*/
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,time, mark, audio, video {
+	margin: 0;	padding: 0;	border: 0;	font-size: 100%; font: inherit;	vertical-align: baseline;text-decoration:none;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+article::after{
+    display: block;
+    content: '';
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+section::after{
+    display: block;
+    content: '';
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+/* RESET CSS*/
+/*
+-webkit-크롬,사파리
+-moz-파이어폭스
+-ms-익스플로어
+-o-오페라
+*/    
+html,body{
+    width: 100%;height: 100%;
+}
+.scroll_box{
+    width: 100%;height: 100%;
+    overflow-y: hidden;
+}
+section#main{
+    width: 100%;height: 100%;
+}
+#main_container{
+    width: 70%;height: 100%;
+    position: relative;
+    vertical-align:middle;
+}
+#main_container > #main_content_back{            
+    width: 95%;
+    height: 100%;
+    position: relative;
+    float: left;
+    display: inline-block;
+    background-color:#000;
+}
+
+#main_container > #main_content_back >.contents{            
+    position:absolute;
+    top:50%;
+    left:50%;
+    background-color: #fff;
+    text-align: center;
+    transform:translate(-50%, -50%);/*정가운데*/
+    width:100%;
+    height:100%;
+}
+#main_container > #main_content_back >.contents >div{
+    position:relative;
+    width: 100%;
+    height:100%;
+
+}
+#main_container > #main_content_back >.contents >div >h1,.contents p{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+#main_container > #main_content_back >.contents >div >h1{
+    font-size:30pt;
+    font-weight: 900;
+    margin-top:-5%;
+
+}
+#main_container > #main_content_back >.contents >div > p{
+    font-size:16pt;
+    font-weight: 500;
+    margin-top:5%;
+
+}
+#main_container > #main_content_back >#main_index{
+    background-color: #d8af46;
+    z-index: 10;
+}
+#main_container > #main_content_back >#main_work{
+    z-index:1;
+    background-color: #006e51;
+}
+#main_container > #main_content_back >#main_contact{
+    z-index:1;
+    background-color: #93b6d6;
+}
+
+#main_container > #main_menu{
+    background-color:#fff;
+    width:5%;
+    display: inline-block;
+    vertical-align: middle;
+    height:100%;
+
+}
+#main_container > #main_menu > ul{
+    width: 100%;
+    height: 100%;
+
+}
+#main_container > #main_menu > ul > li{
+    height: 33.3%;
+    border-bottom:solid 1px #000;
+    position: relative;
+
+
+
+}
+
+#main_container > #main_menu > ul > li > a{
+     writing-mode:vertical-rl;
+    -webkit-writing-mode:vertical-rl;
+    -moz-writing-mode:vertical-rl;
+    -ms-writing-mode:vertical-rl;
+    -o-writing-mode:vertical-rl;
+    position: absolute;
+    top:50%;
+    left:50%;
+    height: 150px;
+    margin-left: -10px;
+    margin-top: -20px; 
+}
+#main_container > #main_menu > ul > li:hover{
+    text-decoration: line-through;
+    cursor: pointer;
+
+}
+#profile{
+    width: 30%;height:100%;
+    background-color:#fff;
+    position:absolute;
+    top:0;left:70%;
+    overflow-y:auto;
+    text-align: right;
+    
+
+}
+#profile >h3{font-size:14pt;font-weight: 500; margin-top: 20%;margin-left: 5%;text-align: left;}
+#profile >ul{float: right;width: 350px;padding:5%; }
+#profile >ul >li{width: 350px;}
+#profile >ul >li >h2{font-size:20px;font-weight: 800;margin-top: 10%;margin-bottom:20%;}
+#profile >ul >li >p{margin-top: 7%; font-size:14px;font-weight: 500; line-height: 16pt;}
+#profile >ul >li.skilbar{width: 100%;margin-bottom: 30px; font-size:12pt;font-weight: 900;}
+#profile >ul >li.skilbar >span{float: left; display: block; width: 70%; border: solid 1px #000;background-color: black;margin-left: 10pt;}
+
+/*Work*/
+section#work{padding:5%;}
+section#work > article {width:1170px;margin: auto;text-align: center;}
+section#work > article > h1{font-weight:900; font-size:30pt; margin-bottom:5%;}
+section#work > article > div#search{width:400px;font-size: 14pt;margin: auto;}
+section#work > article > ul#work_button{width:40%;height:30px;display:inline-block;}
+section#work > article > ul#work_button > li{width:30%;height:100%; display: inline-block;}
+section#work > article > ul#work_button > li >a{display:block;font-size:12pt;width: 100%; height:100%; font-weight: 800;color:#000; border:solid 2px #000;border-radius: 5px;line-height: 30px;}
+
+section#work > article > ul#work_list{width: 100%; display:inline-block;margin-top: 5%;position: relative;height:1000px;text-align: left;}
+section#work > article > ul#work_list >li{width:30%;height: 150px;display:inline-block;text-align: center;}
+section#work > article > ul#work_list >li >a{
+    display: block; width: 100%; height: 100%; border: solid 1px #000;
+    
+}
+.both{display: block;position: absolute;bottom:0;left:0;}
+.left{float:left;}
+
