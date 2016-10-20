@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+
+<style>
+ul{width:100%;max-width:550px;min-height:500px;}
+
+li{width:80px;height:10%;margin:5px;float:left;list-style:none; background-color:blue;}
+</style>
+</head>
+<body>
+
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+
+<div>
+ <div> 
+   Filter: <input type='text' id='txtFilter' onkeyup='{filter();return false}' onkeypress='javascript:if(event.keyCode==13){ filter(); return false;}'>
+<a id ="a1" class="f_button" href="#">웹</a>
+<a id ="a2" class="f_button" href="#">공부</a>
+<a id ="a3" class="f_button" href="#">버튼</a>
+<a id ="a4" class="f_button" href="#">버튼</a>
+</div>   
+<ul>
+   <li class="a1">1</li>
+   <li class="a2">고구마</li>
+   <li class="a3">3</li>
+   <li class="a4">4</li>
+   <li class="a1">1</li>
+   <li class="a2">2</li>
+   <li class="a3">3</li>
+   <li class="a4">4</li>
+   <li class="a1">1</li>
+   <li class="a2">2</li>
+  
+</ul>
+</div>
+
+  <script type='text/javascript'>
+	function filter(){
+		if($('#txtFilter').val()=="")
+            //어떤 글도입력되지 않을때
+			$("li").css('display','');			
+		else{
+            //글이 입력되었을때
+			$("li").css('display','none');	$("li[class*='"+$('#txtFilter').val()+"']").css('display','');
+            //#languageTBody tr의 모든 id 요소에서 입력된 글과 일치하는 속성을 찾음
+		}
+		return false;
+	}
+
+$('.f_button').click(function(){
+    //$("li[class*='"+$('#txtFilter').val()+"']").css('display','');
+    //$("li[class*='"+$('.a1')+"']").css('display','');
+    //alert(this.id);
+  display_change("li."+this.id);
+});
+function display_change(class_var){
+    $("li").css('display','none');
+    $(class_var).css('display','');
+}
+</script>   
+</body>
+</html>
